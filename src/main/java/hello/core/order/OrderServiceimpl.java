@@ -12,12 +12,10 @@ public class OrderServiceimpl implements OrderService{
     private DiscountPolicy discountPolicy = new FixDiscountPolicy();
 
     @Override
-    public void order(Order order) {
+    public Order createOrder(Long memberId, String itemName, int itemPrice) {
+        Member member = memberRepository.findById(memberId);
+        int discountPrice = discountPolicy.discount(member, itemPrice);
 
-        Member member = memberRepository.findById(order.getId());
-
-        if(member.getGrade() == Grade.VIP) {
-            order.setPrice(order.getPrice() - discountPolicy.discount(order));
-        }
+        return new Order(memberId, itemName, itemPrice, discountPrice);
     }
 }

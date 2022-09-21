@@ -1,10 +1,19 @@
 package hello.core.discount;
 
+import hello.core.member.Grade;
+import hello.core.member.Member;
 import hello.core.order.Order;
 
 public class FixDiscountPolicy implements DiscountPolicy {
+
+    private int discountFixAmount = 1000;
+
     @Override
-    public int discount(Order order) {
-        return order.getPrice() - 1000;
+    public int discount(Member member, int price) {
+        if(member.getGrade() == Grade.VIP) {
+            return discountFixAmount;
+        } else {
+            return 0;
+        }
     }
 }

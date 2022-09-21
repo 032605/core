@@ -1,37 +1,61 @@
 package hello.core.order;
 
 public class Order {
-    private long id;
-    private String product;
-    private int price;
+    private long memberId;
+    private String itemName;
+    private int itemPrice;
+    private int discountPrice;
 
-    public Order(long id, String product, int price) {
-        this.id = id;
-        this.product = product;
-        this.price = price;
+    public int calculatePrice() {
+        return itemPrice - discountPrice;
     }
 
-    public long getId() {
-        return id;
+    public Order(long memberId, String itemName, int itemPrice, int discountPrice) {
+        this.memberId = memberId;
+        this.itemName = itemName;
+        this.itemPrice = itemPrice;
+        this.discountPrice = discountPrice;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public long getMemberId() {
+        return memberId;
     }
 
-    public String getProduct() {
-        return product;
+    public void setMemberId(long memberId) {
+        this.memberId = memberId;
     }
 
-    public void setProduct(String product) {
-        this.product = product;
+    public String getItemName() {
+        return itemName;
     }
 
-    public int getPrice() {
-        return price;
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public int getItemPrice() {
+        return itemPrice;
+    }
+
+    public void setItemPrice(int itemPrice) {
+        this.itemPrice = itemPrice;
+    }
+
+    public int getDiscountPrice() {
+        return discountPrice;
+    }
+
+    public void setDiscountPrice(int discountPrice) {
+        this.discountPrice = discountPrice;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "memberId=" + memberId +
+                ", itemName='" + itemName + '\'' +
+                ", itemPrice=" + itemPrice +
+                ", discountPrice=" + discountPrice +
+                '}';
     }
 }

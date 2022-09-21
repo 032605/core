@@ -1,8 +1,12 @@
 package hello.core.discount;
 
-import hello.core.order.Order;
+import hello.core.member.Member;
 
 public interface DiscountPolicy {
 
-    int discount(Order order);
+    /**
+     *
+     * @return 할인 대상 금액
+     */
+    int discount(Member member, int price);
 }
