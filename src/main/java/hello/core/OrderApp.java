@@ -11,8 +11,10 @@ import hello.core.order.OrderServiceimpl;
 public class OrderApp {
     public static void main(String[] args) {
         //main 메서드보다 test에서 테스트 필요!
-        MemberService memberService = new MemebrServiceImpl();
-        OrderService orderService = new OrderServiceimpl();
+        AppConfig appConfig = new AppConfig();
+
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
 
         Long memberId = 1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);
