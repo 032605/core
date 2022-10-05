@@ -54,6 +54,6 @@ public class SingletonTest {
         System.out.println("memberService = " + memberService);
         System.out.println("memberService2 = " + memberService2);
 
-        Assertions.assertThat(memberService).isSameAs(memberService2);
+        Assertions.assertThat(memberService).isSameAs(memberService2);          //인스턴스 값 비교
     }
 }
