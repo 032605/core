@@ -19,6 +19,7 @@ public class AutoAppConfigTest {
         MemberService bean = ac.getBean(MemberService.class);
         assertThat(bean).isInstanceOf(MemberService.class);
 
+        // 의존관계 주입 확인을 위한 테스트 코드
         OrderServiceimpl bean1 = ac.getBean(OrderServiceimpl.class);
         MemberRepository memberRepository = bean1.getMemberRepository();
         System.out.println("memberRepository = " + memberRepository);

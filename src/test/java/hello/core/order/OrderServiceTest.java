@@ -35,11 +35,11 @@ public class OrderServiceTest {
         Member member = new Member(1L, "meme1", Grade.VIP);
         memberService.join(member);
 
-        OrderServiceimpl orderService = new OrderServiceimpl();
+        //OrderServiceimpl orderService = new OrderServiceimpl();
         // 값을 넣어 줄 수 없으므로 java.lang.NullPointerException
-        orderService.setMemberRepository(new MemoryMemberRepositroy());
-        orderService.setDiscountPolicy(new FixDiscountPolicy());
+        //orderService.setMemberRepository(new MemoryMemberRepositroy());
+        //orderService.setDiscountPolicy(new FixDiscountPolicy());
 
-        orderService.createOrder(1L, "meme1", 100);
+        //orderService.createOrder(1L, "meme1", 100);
     }
 }

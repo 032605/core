@@ -14,8 +14,11 @@ import org.springframework.context.annotation.FilterType;
 )
 public class AutoAppConfig {
 
+    // 컴포넌트 스캔과 충돌에서 중복 테스트 코드
+    /*
     @Bean(name = "memoryMemberRepositroy")
     MemberRepository memberRepository() {
         return new MemoryMemberRepositroy();
     }
+    */
 }
