@@ -19,7 +19,7 @@ public class OrderServiceimpl implements OrderService{
 
     //@Autowired (생성자 1개일 경우 생략 가능)
     //Lombok @RequiredArgsConstructor (ctrl+F12)
-    public OrderServiceimpl(MemberRepository memberRepository, @Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy) {
+    public OrderServiceimpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
