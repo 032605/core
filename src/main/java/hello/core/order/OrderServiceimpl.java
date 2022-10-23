@@ -3,10 +3,12 @@ package hello.core.order;
 import hello.core.discount.DiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class OrderServiceimpl implements OrderService{
 
     // 생성자 주입 : final 키워드 사용 가능
@@ -15,11 +17,12 @@ public class OrderServiceimpl implements OrderService{
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    @Autowired
-    public OrderServiceimpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    //@Autowired (생성자 1개일 경우 생략 가능)
+    //Lombok @RequiredArgsConstructor (ctrl+F12)
+    /*public OrderServiceimpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
-    }
+    }*/
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
