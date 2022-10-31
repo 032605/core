@@ -24,7 +24,7 @@ public class MyLogger {
 
     @PostConstruct
     public void init(){
-        String uuid = UUID.randomUUID().toString(); // 로또 맞을 확률보다 더더더 낮다
+        uuid = UUID.randomUUID().toString(); // 로또 맞을 확률보다 더더더 낮다
         System.out.println("[" + uuid + "] request scope bean create : " + this);
     }
 
